@@ -1,6 +1,6 @@
 import { sign } from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
-import { prisma } from '../../prisma/database';
+import { prisma } from '../../database/database';
 
 interface IUserResponse {
     id: string,

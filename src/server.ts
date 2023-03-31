@@ -10,5 +10,5 @@ app.use(express.json());
 app.use(userRoutes);
 
 app.listen((process.env.PORT || 80), () => {
-    console.log(`Server running on port ${process.env.PORT}`);
+    console.log(`Server running on port ${process.env.PORT || 80}`);
 });
