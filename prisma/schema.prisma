@@ -18,8 +18,8 @@ model User {
 }
 
 model Machine {
-  id_machine String @id @map("_id") 
-  name String
+  id_machine String @id @map("_id")
+  location String
   collectedCaps CapColor[]
 }
 

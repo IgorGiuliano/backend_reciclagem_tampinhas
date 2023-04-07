@@ -3,8 +3,9 @@ import bcrypt from 'bcrypt';
 import { prisma } from '../../database/database';
 
 interface IUserResponse {
-    id: string,
+    id_user: string,
     name: string,
+    last_name: string,
     email: string,
     password: string
 }
@@ -34,11 +35,11 @@ class LoginService {
         },
         process.env.JWT_SECRET,
         {
-            subject: user.id,
+            subject: user.id_user,
             expiresIn: '1d'
         });
 
-        return { token, data: { id: user.id, name: user.name, email: user.email } };
+        return { token, data: { id: user.id_user, name: user.name, email: user.email } };
     }
 }
 
