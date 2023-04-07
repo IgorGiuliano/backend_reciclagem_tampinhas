@@ -1,10 +1,6 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
-
 datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
@@ -12,22 +8,46 @@ datasource db {
 
 model User {
   id_user String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  last_name String
   email String @unique
   password String
-  name String
-  lastName String
   cpf String @unique
-  cargo String
-}
-
-model Cap {
-  id_tampinha String @id @default(auto()) @map("_id") @db.ObjectId
-  color String
-  collected_date Int
+  role UserRole
+  userCaps UserCapColor[] 
 }
 
 model Machine {
-  id_machine String @id @map("_id")
-  latitude String
-  longitude String
+  id_machine String @id @map("_id") 
+  name String
+  collectedCaps CapColor[]
+}
+
+model CapColor {
+  id_capColor String @id @default(auto()) @map("_id") @db.ObjectId
+  color Color
+  count Int
+  machine Machine @relation(fields: [machineId], references: [id_machine])
+  machineId String
+}
+
+model UserCapColor {
+  id_usercapcolor String  @id @default(auto()) @map("_id") @db.ObjectId
+  user User @relation(fields: [cpf_user], references: [cpf])
+  cpf_user String
+  color Color
+  count Int
+}
+
+enum UserRole {
+  ADMIN
+  NORMAL
+}
+
+enum Color {
+  RED
+  GREEN
+  BLUE
+  WHITE
+  OTHER
 }
