@@ -8,7 +8,7 @@ interface IRequestBody {
     lastName: string
 }
 
-class RegisterUserController {
+class EditUserController {
     async handle(request: Request, response: Response) {
         const { idUser, email, name, lastName } = request.body as IRequestBody;
         const service = new EditUserService();
@@ -31,4 +31,4 @@ class RegisterUserController {
     }
 }
 
-export { RegisterUserController };
+export { EditUserController };

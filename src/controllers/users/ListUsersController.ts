@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { ListUsersService } from '../../services/users/ListUsersService';
 
-class LoginController {
+class ListUsersController {
     async handle(request: Request, response: Response) {
         const service = new ListUsersService();
 
@@ -19,4 +19,4 @@ class LoginController {
     }
 }
 
-export { LoginController };
+export { ListUsersController };
