@@ -4,7 +4,7 @@ class ListUsersService {
     async execute() {
         const users = await prisma.user.findMany({
             where: {
-                role: 'NORMAL'
+                role: 'ADMIN'
             },
             select: {
                 id_user: true,

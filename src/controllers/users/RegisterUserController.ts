@@ -5,7 +5,7 @@ import isValidCPF from '../../utils/validators/cpfValidator';
 interface IRequestBody {
     email: string,
     password: string,
-    passwordConfirmation: string
+    passwordConfirmation: string,
     name: string,
     lastName: string,
     cpf: string,
