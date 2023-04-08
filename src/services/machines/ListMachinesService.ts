@@ -1,6 +1,6 @@
 import { prisma } from '../../database/database';
 
-class ListMachineService {
+class ListMachinesService {
     async execute() {
         const machine = await prisma.machine.findMany({
             select: {
@@ -13,4 +13,4 @@ class ListMachineService {
     }
 }
 
-export { ListMachineService };
+export { ListMachinesService };
