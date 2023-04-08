@@ -12,7 +12,7 @@ interface IRequestBody {
     role: string,
 }
 
-class RegisterController {
+class RegisterUserController {
     async handle(request: Request, response: Response) {
         const { email, password, passwordConfirmation, name, lastName, cpf, role } = request.body as IRequestBody;
         const service = new RegisterUserService();
@@ -48,4 +48,4 @@ class RegisterController {
     }
 }
 
-export { RegisterController };
+export { RegisterUserController };

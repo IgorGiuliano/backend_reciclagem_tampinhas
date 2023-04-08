@@ -6,7 +6,7 @@ interface IRequestBody {
     location: string
 }
 
-class RegisterController {
+class RegisterMachineController {
     async handle(request: Request, response: Response) {
         const { idMachine, location } = request.body as IRequestBody;
         const service = new RegisterMachineService();
@@ -25,4 +25,4 @@ class RegisterController {
     }
 }
 
-export { RegisterController };
+export { RegisterMachineController };

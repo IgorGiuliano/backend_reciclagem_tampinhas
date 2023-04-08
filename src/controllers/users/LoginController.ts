@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { LoginService } from '../../services/user/LoginService';
+import { LoginService } from '../../services/users/LoginService';
 
 interface IRequestBody {
     email: string,
