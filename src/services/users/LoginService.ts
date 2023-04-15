@@ -7,7 +7,8 @@ interface IUserResponse {
     name: string,
     last_name: string,
     email: string,
-    password: string
+    password: string,
+    role: string
 }
 
 class LoginService {
@@ -30,7 +31,8 @@ class LoginService {
 
         const token = sign({
             user: {
-                name: user.name
+                name: user.name,
+                role: user.role // Adicione a role do usuário aqui
             }
         },
         process.env.JWT_SECRET,

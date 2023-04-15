@@ -9,7 +9,7 @@ export function ensureAuthenticated(request: Request, response: Response, next: 
     const authToken = request.headers.authorization;
 
     if (!authToken) {
-        return response.status(401).json({ Message: 'Token não existente' });
+        return response.status(401).json({ Message: 'Não autenticado, token não existente' });
     }
 
     try {
