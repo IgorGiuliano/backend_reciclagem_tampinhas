@@ -8,7 +8,7 @@ import { ensureAuthenticated } from '@middlewares/ensureAuthentication';
 const machineRoutes = Router();
 
 machineRoutes.post('/register_machine', ensureAuthenticated, new RegisterMachineController().handle);
-machineRoutes.get('/list_machines', ensureAuthenticated, new ListMachinesController().handle);
+machineRoutes.get('/list_machines', new ListMachinesController().handle);
 machineRoutes.put('/edit_machine', ensureAuthenticated, new EditMachineController().handle);
 machineRoutes.delete('/delete_machine', ensureAuthenticated, new DeleteMachineController().handle);
 

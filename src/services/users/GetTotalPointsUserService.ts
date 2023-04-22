@@ -12,10 +12,10 @@ class GetTotalPointsUserService {
         });
 
         const points = await prisma.userCapColor.groupBy({
+            by: ['color'],
             where: {
                 cpf_user: user.cpf
             },
-            by: ['color'],
             _sum: {
                 count: true
             }
