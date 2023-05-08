@@ -29,12 +29,9 @@ model CapColor {
   count Int
   machine Machine @relation(fields: [machineId], references: [id_machine])
   machineId String
-  createdAt DateTime
+  createdAt Int
 }
 
-type CapColorSum {
-  count Int
-}
 model UserCapColor {
   id_usercapcolor String  @id @default(auto()) @map("_id") @db.ObjectId
   user User @relation(fields: [cpf_user], references: [cpf])

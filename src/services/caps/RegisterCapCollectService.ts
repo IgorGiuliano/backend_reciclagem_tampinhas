@@ -10,7 +10,8 @@ class RegisterCapCollectService {
             data: {
                 machineId: idMachine,
                 color,
-                count: quantity
+                count: quantity,
+                createdAt: new Date().getTime()
             }
         });
 

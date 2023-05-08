@@ -12,9 +12,9 @@ const userRoutes = Router();
 
 userRoutes.post('/login', new LoginController().handle);
 userRoutes.post('/register_user', new RegisterUserController().handle);
-userRoutes.get('/list_users', ensureAuthenticated, ensureAdmin, new ListUsersController().handle);
+userRoutes.get('/list_users', ensureAuthenticated, new ListUsersController().handle);
 userRoutes.get('/get_points', ensureAuthenticated, new GetTotalPointsUsersController().handle);
 userRoutes.put('/edit_user', ensureAuthenticated, new EditUserController().handle);
-userRoutes.delete('/delete_user', ensureAuthenticated, ensureAdmin, new DisableUserController().handle);
+userRoutes.delete('/delete_user', ensureAuthenticated, new DisableUserController().handle);
 
 export { userRoutes };
