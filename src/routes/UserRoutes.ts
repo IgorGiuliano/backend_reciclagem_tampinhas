@@ -13,7 +13,7 @@ const userRoutes = Router();
 userRoutes.post('/login', new LoginController().handle);
 userRoutes.post('/register_user', new RegisterUserController().handle);
 userRoutes.get('/list_users', ensureAuthenticated, new ListUsersController().handle);
-userRoutes.get('/get_points', ensureAuthenticated, new GetTotalPointsUsersController().handle);
+userRoutes.post('/get_points', ensureAuthenticated, new GetTotalPointsUsersController().handle);
 userRoutes.put('/edit_user', ensureAuthenticated, new EditUserController().handle);
 userRoutes.delete('/delete_user', ensureAuthenticated, new DisableUserController().handle);
 
